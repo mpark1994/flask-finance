@@ -61,6 +61,8 @@ def index():
     # Get rid of display if total shares = 0
     for i in range(len(stocks) - 1, -1, -1):
         stock = stocks[i]
+        # add to total
+        total += (stock["price"] * stock["total_shares"])
         if stock["total_shares"] == 0:
             stocks.pop(i)
 
