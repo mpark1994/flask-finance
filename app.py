@@ -132,7 +132,7 @@ def history():
 
     # Set data
     user_id = session["user_id"]
-    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ?", user_id)
+    stocks = db.execute("SELECT * FROM stocks WHERE user_id = ? ORDER BY time DESC;", user_id)
 
     return render_template("history.html", stocks=stocks, usd=usd)
 
